@@ -1,0 +1,66 @@
+{
+    "description": "PTR Knowledge Base Flow",
+    "name": "PTR Knowledge Base",
+    "nodes": [
+        {
+            "id": "agent",
+            "type": "Agent",
+            "data": {
+                "name": "PTR Knowledge Agent",
+                "description": "Agent that answers questions about PTR using Astra DB",
+                "model": "gpt-3.5-turbo",
+                "temperature": 0.7,
+                "max_tokens": 1000,
+                "system_message": "You are a PTR Knowledge Base Assistant. Your role is to answer questions about PTR Technology, products, services, and documentation using the information stored in Astra DB.\n\nGuidelines:\n1. Only answer questions related to PTR\n2. Use the provided knowledge base (Astra DB) as your source of information\n3. If you don't find the answer in the knowledge base, politely inform the user\n4. Keep responses clear, concise, and professional\n5. Use bullet points for complex information\n6. Always maintain a helpful and professional tone\n\nAfter each answer, suggest 2-3 relevant follow-up questions that the user might want to ask next."
+            }
+        },
+        {
+            "id": "astra_db",
+            "type": "AstraDB",
+            "data": {
+                "name": "PTR Knowledge Base",
+                "description": "Astra DB vector store containing PTR documentation",
+                "collection_name": "ptr_knowledge",
+                "api_endpoint": "https://{astra_db_id}-{astra_db_region}.apps.astra.datastax.com",
+                "token": "{astra_db_application_token}",
+                "namespace": "{astra_db_keyspace}"
+            }
+        },
+        {
+            "id": "input",
+            "type": "Input",
+            "data": {
+                "name": "Question",
+                "description": "User's question about PTR"
+            }
+        },
+        {
+            "id": "output",
+            "type": "Output",
+            "data": {
+                "name": "Answer",
+                "description": "Agent's response with suggested follow-up questions"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": "input",
+            "target": "agent",
+            "sourceHandle": "output",
+            "targetHandle": "input"
+        },
+        {
+            "source": "astra_db",
+            "target": "agent",
+            "sourceHandle": "output",
+            "targetHandle": "tools"
+        },
+        {
+            "source": "agent",
+            "target": "output",
+            "sourceHandle": "output",
+            "targetHandle": "input"
+        }
+    ]
+} 
