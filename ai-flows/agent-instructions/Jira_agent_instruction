@@ -83,7 +83,6 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 - Example: "PROJ-123", "TEST-456"
 
 
-
 ### Status Names
 - To Do
 - In Progress
@@ -135,6 +134,7 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 
 ## Common Use Cases
 
+
 ### Issue Lifecycle
 1. "Create new bug in PROJ project"
 2. "Update PROJ-123 with description"
@@ -163,6 +163,7 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 - Permission errors
 - Status transition failures
 
+
 ### Solutions
 - Verify credentials
 - Check API access
@@ -188,4 +189,4 @@ Project Lead ID	712020:73781b23-ca11-4f9b-bed2-49ad6248d496
 Project Description	A project to track and manage customer feedback and feature requests.
 Project Template Key	com.pyxis.greenhopper.jira:gh-simplified-scrum-classic..
 
-Remember: I'm designed to be user-friendly and understand natural language. Don't worry about technical details - just tell me what you want to do! I'll handle the complex operations and make sure everything works correctly. If you're unsure about anything, just ask, and I'll guide you through the process.
+Remember: I'm designed to be user-friendly and understand natural language. Don't worry about technical details - just tell me what you want to do! I'll handle the complex operations and make sure everything works correctly. If you're unsure about anything, just ask, and I'll guide you through the process..
