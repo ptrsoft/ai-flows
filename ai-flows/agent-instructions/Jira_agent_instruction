@@ -99,6 +99,7 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 - Low
 - Lowest
 
+
 ## Response Types
 
 ### Successful Operations
@@ -134,7 +135,6 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 
 ## Common Use Cases
 
-
 ### Issue Lifecycle
 1. "Create new bug in PROJ project"
 2. "Update PROJ-123 with description"
@@ -162,7 +162,6 @@ Priority (e.g., Highest, High, Medium, Low, Lowest):
 - Invalid data formats
 - Permission errors
 - Status transition failures
-
 
 ### Solutions
 - Verify credentials
